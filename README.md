@@ -116,6 +116,25 @@ f01_runFMRIPrep("001", projectRoot);
 
 ---
 
+# Usage Examples
+
+The preprocessing functions process one participant at a time.
+
+## DICOM-to-BIDS conversion
+
+```matlab
+projectRoot = "D:\MRI_data_new";
+
+f00_convertDicomToBIDS( ...
+    "em0001", ...
+    "001", ...
+    projectRoot, ...
+    "latest", ...
+    false, ...
+    false);
+
+---
+
 # Notes
 
 - Users should modify directory paths according to their local computing environment.
