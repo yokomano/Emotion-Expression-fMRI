@@ -1,4 +1,18 @@
-# First-level context × response model — Version 1.0
+# First-level Analysis
+
+This directory will contain the SPM first-level analysis scripts associated
+with Mano et al. (2026).
+
+## Status
+
+Documentation and code review are currently in progress.
+
+## Planned contents
+
+- Main first-level GLM
+- Exploratory context × response GLM
+- Contrast specification
+- Batch execution script
 
 ## Purpose
 
