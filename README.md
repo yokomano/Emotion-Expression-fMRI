@@ -1,14 +1,13 @@
 # Emotion-Expression-fMRI
-Analysis scripts accompanying Mano et al. (2026), Social Cognitive and Affective Neuroscience.
+Analysis scripts accompanying:
 
-# Neural mechanisms underlying decisions to express or suppress emotions
+> Mano, Y., Nakaya, K., Komeda, H., Toyama, A., Fukuda, H., Miyamoto, Y., Kitayama, S., & Suzuki, S. (2026).
 
-This repository contains the analysis scripts accompanying the following publication.
+**Neural mechanisms underlying decisions to express or suppress emotions.**
 
-> **Mano, Y., Nakaya, K., Komeda, H., Toyama, A., Fukuda, H., Miyamoto, Y., Kitayama, S., & Suzuki, S. (2026).**  
-> *Neural mechanisms underlying decisions to express or suppress emotions.*  
-> *Social Cognitive and Affective Neuroscience.*  
-> https://doi.org/10.1093/scan/nsag068
+*Social Cognitive and Affective Neuroscience.*
+
+https://doi.org/10.1093/scan/nsag068
 
 The corresponding MRI dataset is publicly available from **OpenNeuro**.
 
@@ -108,6 +107,12 @@ ROI analyses
         ▼
 Figures
 ```
+
+## Example Run fMRIPrep for one participant.
+matlab
+projectRoot = 'D:\MRI_data_new';
+
+f01_runFMRIPrep("001", projectRoot);
 
 ---
 
