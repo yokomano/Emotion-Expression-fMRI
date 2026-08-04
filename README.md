@@ -123,11 +123,12 @@ Figures
 
 # OpenNeuro Dataset
 
-The MRI dataset accompanying this repository is available from:
+The MRI dataset accompanying this repository is publicly available from OpenNeuro.
 
-**OpenNeuro**
+Dataset:
+https://openneuro.org/datasets/ds008583
 
-*(Dataset DOI will be added after publication.)*
+The DOI will be added after OpenNeuro publication.
 
 ---
 
