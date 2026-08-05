@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated article."
+title: "Emotion-Expression-fMRI"
+type: software
+authors:
+  - family-names: Mano
+    given-names: Yoko
+    orcid: ""
+  - family-names: Suzuki
+    given-names: Shinsuke
+version: 1.0.0-rc1
+date-released: 2026-08-05
+repository-code: "https://github.com/yokomano/Emotion-Expression-fMRI"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Mano
+      given-names: Yoko
+    - family-names: Nakaya
+      given-names: Koki
+    - family-names: Komeda
+      given-names: Hidetsugu
+    - family-names: Toyama
+      given-names: Asako
+    - family-names: Fukuda
+      given-names: Haruaki
+    - family-names: Miyamoto
+      given-names: Yuri
+    - family-names: Kitayama
+      given-names: Shinobu
+    - family-names: Suzuki
+      given-names: Shinsuke
+  title: "Neural mechanisms underlying decisions to express or suppress emotions"
+  journal: "Social Cognitive and Affective Neuroscience"
+  year: 2026
+  doi: "10.1093/scan/nsag068"

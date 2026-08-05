@@ -1,172 +1,99 @@
 # Emotion-Expression-fMRI
+
 Analysis scripts accompanying:
 
-> Mano, Y., Nakaya, K., Komeda, H., Toyama, A., Fukuda, H., Miyamoto, Y., Kitayama, S., & Suzuki, S. (2026).
+> Mano, Y., Nakaya, K., Komeda, H., Toyama, A., Fukuda, H., Miyamoto, Y.,
+> Kitayama, S., & Suzuki, S. (2026).  
+> **Neural mechanisms underlying decisions to express or suppress emotions.**  
+> *Social Cognitive and Affective Neuroscience.*  
+> https://doi.org/10.1093/scan/nsag068
 
-**Neural mechanisms underlying decisions to express or suppress emotions.**
+## Overview
 
-*Social Cognitive and Affective Neuroscience.*
+This repository contains public-facing analysis scripts for the behavioral and
+fMRI analyses reported in the article.
 
-https://doi.org/10.1093/scan/nsag068
+Participants decided whether they would express emotions elicited by written
+scenarios while undergoing fMRI. The analyses examined:
 
-The corresponding MRI dataset is publicly available from **OpenNeuro**.
+- Emotion versus Control sentence processing
+- Parametric effects of perceived valence and arousal
+- Decision-related activity for Emotion No > Yes responses
+- ROI associations with alexithymia and self-construal
+- Behavioral generalized linear mixed-effects models
 
----
+## Repository structure
 
-# Overview
+```text
+01_preprocessing/   DICOM/BIDS/fMRIPrep/SPM smoothing documentation
+02_firstlevel/      Participant-level SPM models and contrasts
+03_secondlevel/     Group-level one-sample t-tests
+04_roi/             Right TPJ and right dlPFC ROI analyses
+05_behavior/        Trial-level data preparation and GLMM specifications
+06_figures/         Public-facing Figure 3 and Figure 4 scripts
+docs/               Pipeline, manuscript mapping, and reproducibility notes
+```
 
-This repository contains the scripts used to reproduce the preprocessing, statistical analyses, ROI analyses, and figures reported in the manuscript.
+## Principal manuscript mapping
 
-The repository is organized according to the analysis pipeline, from preprocessing through manuscript figure generation.
+| Manuscript result | Public script |
+|---|---|
+| Figure 3a: Emotion > Control | `02_firstlevel/firstlevel_main.m` → `03_secondlevel/secondlevel_main.m` → `06_figures/figure3.m` |
+| Figure 3b: Arousal positive | same pipeline |
+| Figure 3c: Valence negative | same pipeline |
+| Figure 4: Emotion No > Yes | `02_firstlevel/firstlevel_decision.m` → `03_secondlevel/secondlevel_main.m` |
+| Figure 4 ROI correlations | `04_roi/roi_extract.m` → `04_roi/roi_statistics.m` → `06_figures/figure4.m` |
+| Behavioral GLMMs | `05_behavior/prepare_behavior_data.py` → `05_behavior/glmm_models.R` |
 
----
+## Software
 
-# Requirements
-
-The analyses were performed using:
-
-- MATLAB R2024b
+- MATLAB R2024a
 - SPM25
-- Docker Desktop
-- dcm2bids
 - fMRIPrep 23.2.1
+- Nipype 1.8.6
+- Python 3
+- R with `lme4`
 
----
+See `requirements.md`.
 
-# Repository Structure
+## Reproduction order
 
-## 01_preprocessing
+1. Prepare BIDS data and run fMRIPrep.
+2. Apply 6-mm FWHM smoothing.
+3. Run first-level models and first-level contrasts.
+4. Run group-level analyses.
+5. Extract ROI values and run ROI correlations.
+6. Prepare behavioral data and fit GLMMs.
+7. Generate figure panels.
 
-Scripts for:
+See `docs/analysis_pipeline.md`.
 
-- DICOM → BIDS conversion
-- fMRIPrep preprocessing
-- Spatial smoothing
+## Data availability
 
----
+The accepted proof states that data supporting the findings are available
+from the corresponding author upon reasonable request. Update this section
+when the OpenNeuro accession and permanent dataset DOI are finalized.
 
-## 02_firstLevel
+## Important release status
 
-Scripts for:
+This package is a **public-release candidate** assembled from the manuscript
+and the supplied analysis code.
 
-- First-level GLM specification
-- Model estimation
-- Contrast generation
+Before creating a permanent GitHub release, verify:
 
----
+- The public first-level designs against archived final `SPM.mat` files
+- N = 40 for each principal group analysis
+- The exact miss-trial implementation
+- The four ROI correlation outputs
+- Statistical maps against the final manuscript figures
 
-## 03_secondLevel
+See `docs/reproducibility_checklist.md`.
 
-Scripts for:
+## License
 
-- Group-level analyses
-- One-sample t-tests
-- Regression analyses
+Code is released under the MIT License. Data are not covered by the code
+license and may have separate access conditions.
 
----
+## Citation
 
-## 04_ROI
-
-Scripts for:
-
-- ROI analyses
-- ROI extraction
-- ROI visualization
-
----
-
-## 05_figures
-
-Scripts used to generate the figures reported in the manuscript.
-
----
-
-# Workflow
-
-```
-OpenNeuro Dataset
-        │
-        ▼
-DICOM → BIDS
-        │
-        ▼
-fMRIPrep
-        │
-        ▼
-Spatial smoothing
-        │
-        ▼
-First-level GLM
-        │
-        ▼
-Second-level GLM
-        │
-        ▼
-ROI analyses
-        │
-        ▼
-Figures
-```
-
-## Example Run fMRIPrep for one participant.
-matlab
-projectRoot = 'D:\MRI_data_new';
-
-f01_runFMRIPrep("001", projectRoot);
-
----
-
-# Usage Examples
-
-The preprocessing functions process one participant at a time.
-
-## DICOM-to-BIDS conversion
-
-```matlab
-projectRoot = "D:\MRI_data_new";
-
-f00_convertDicomToBIDS( ...
-    "em0001", ...
-    "001", ...
-    projectRoot, ...
-    "latest", ...
-    false, ...
-    false);
-```
-
----
-
-# Notes
-
-- Users should modify directory paths according to their local computing environment.
-- The scripts were developed on Windows.
-- Some preprocessing steps require Docker Desktop.
-- Software versions may affect reproducibility.
-- Minor modifications may be required before executing the scripts in different computing environments.
-
----
-
-# OpenNeuro Dataset
-
-The MRI dataset accompanying this repository is publicly available from OpenNeuro.
-
-Dataset:
-https://openneuro.org/datasets/ds008583
-
-The DOI will be added after OpenNeuro publication.
-
----
-
-# Citation
-
-If you use these scripts, please cite:
-
-Mano, Y., Nakaya, K., Komeda, H., Toyama, A., Fukuda, H., Miyamoto, Y., Kitayama, S., & Suzuki, S. (2026).
-
-**Neural mechanisms underlying decisions to express or suppress emotions.**
-
-*Social Cognitive and Affective Neuroscience.*
-
-https://doi.org/10.1093/scan/nsag068
-
-Please also cite the corresponding OpenNeuro dataset.
+See `CITATION.cff`.

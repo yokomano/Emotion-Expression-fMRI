@@ -1,0 +1,36 @@
+# MATLAB
+*.asv
+*.m~
+slprj/
+codegen/
+
+# SPM outputs
+SPM.mat
+beta_*.nii
+con_*.nii
+ess_*.nii
+spmT_*.nii
+spmF_*.nii
+ResMS.nii
+RPV.nii
+mask.nii
+
+# MRI data
+*.nii
+*.nii.gz
+*.dcm
+
+# Data tables containing participant-level data
+*.xlsx
+*.xls
+
+# Python/R
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS
+.DS_Store
+Thumbs.db
