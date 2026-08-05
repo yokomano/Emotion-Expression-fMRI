@@ -96,4 +96,4 @@ license and may have separate access conditions.
 
 ## Citation
 
-See `CITATION.cff`.
+orcid:https://orcid.org/0009-0002-1340-666X
