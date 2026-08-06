@@ -1,0 +1,19 @@
+﻿file,variable,description,unit_or_levels
+participant_covariates_public.csv,subject_id,Pseudonymous participant identifier matching OpenNeuro.,sub-XXX
+participant_covariates_public.csv,SC_Independent_Mean,Mean score for the independent self-construal subscale.,mean score
+participant_covariates_public.csv,SC_Interdependent_Mean,Mean score for the interdependent self-construal subscale.,mean score
+participant_covariates_public.csv,SC_Collectivism,Self-construal difference score calculated as SC_Interdependent_Mean minus SC_Independent_Mean. Higher values indicate relatively stronger interdependent self-construal.,difference score
+participant_covariates_public.csv,SC_Collectivism_z,SC_Collectivism standardized across the final N=40 sample.,z score
+participant_covariates_public.csv,TAS20_total,TAS-20 total derived score.,score
+participant_covariates_public.csv,TAS20_DIF,TAS-20 Difficulty Identifying Feelings subscale score.,score
+participant_covariates_public.csv,TAS20_DDF,TAS-20 Difficulty Describing Feelings subscale score.,score
+participant_covariates_public.csv,TAS20_EOT,TAS-20 Externally Oriented Thinking subscale score.,score
+participant_covariates_public.csv,TAS20_total_z,TAS-20 total score standardized across the final N=40 sample.,z score
+participant_covariates_public.csv,TAS20_DIF_z,Standardized TAS20_DIF score.,z score
+participant_covariates_public.csv,TAS20_DDF_z,Standardized TAS20_DDF score.,z score
+participant_covariates_public.csv,TAS20_EOT_z,Standardized TAS20_EOT score.,z score
+postscan_ratings_long_public.csv,item,Scenario sentence number.,1-96
+postscan_ratings_long_public.csv,valence,Participant post-scan valence rating.,Confirm rating scale anchors against the final questionnaire.
+postscan_ratings_long_public.csv,arousal,Participant post-scan arousal rating.,1-10
+postscan_ratings_long_public.csv,valence_z_within96,Valence standardized within participant across the 96 scenario items.,z score
+postscan_ratings_long_public.csv,arousal_z_within96,Arousal standardized within participant across the 96 scenario items.,z score
