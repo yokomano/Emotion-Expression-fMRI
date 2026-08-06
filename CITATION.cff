@@ -1,15 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the associated article."
+message: "If you use this repository, please cite the associated article."
 title: "Emotion-Expression-fMRI"
 type: software
 authors:
   - family-names: Mano
     given-names: Yoko
-    orcid: ""
-  - family-names: Suzuki
-    given-names: Shinsuke
 version: 1.0.0-rc1
-date-released: 2026-08-05
+date-released: 2026-08-06
 repository-code: "https://github.com/yokomano/Emotion-Expression-fMRI"
 preferred-citation:
   type: article
